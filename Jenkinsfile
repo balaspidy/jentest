@@ -4,7 +4,7 @@ stages {
 stage('Deploy App') {
       steps {
         script {
-          kubernetesDeploy(configs: "frontend.yaml", kubeconfigId: "kubeid")
+          kubernetesDeploy(configs: "frontend.yaml", kubeconfigId: "kube.conf (kubeid)")
         }
       }
     }
