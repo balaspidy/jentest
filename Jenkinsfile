@@ -3,7 +3,7 @@ agent any
 stages {
 stage('Checkout Source') {
       steps {
-        git 'https://github.com/balaspidy/Docker-Project.git'
+        git 'https://github.com/balaspidy/jentest.git'
       }
     }
 stage('Deploy App') {
