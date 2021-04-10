@@ -10,7 +10,7 @@ stage('Checkout Source') {
         git 'https://github.com/balaspidy/jentest.git'
       }
     }
-stage('Apply Kubernetes files') {
+stage('Apply Kubernetes files in Prod') {
   when { branch "master" }
     steps {
     withKubeConfig([credentialsId: 'kubeid', serverUrl: 'https://10.128.0.7:6443']) {
@@ -21,7 +21,7 @@ stage('Apply Kubernetes files') {
     }
   }
  
-  stage('Apply Kubernetes files') {
+  stage('Apply Kubernetes files in Dev') {
   when { 
          expression {
             return env.BRANCH_NAME != 'master';
