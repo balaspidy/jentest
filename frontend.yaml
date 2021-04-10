@@ -19,7 +19,7 @@ spec:
           app: frontend
      spec:
         containers:
-        - image: nginx:1.17
+        - image: nginx:1.18
           name: frontend
           
 ---
