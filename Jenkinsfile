@@ -22,7 +22,7 @@ stage('Docker build for Prod') {
     }
 } 
     
-stage('Docker build for Prod') {
+stage('Docker build for Dev') {
  when { 
      expression {
             return env.BRANCH_NAME != 'master';
