@@ -4,6 +4,7 @@ metadata:
   labels:
     run: httpd
   name: httpd
+  namespace: prod
 spec:
   containers:
   - image: httpd
