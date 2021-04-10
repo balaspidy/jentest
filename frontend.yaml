@@ -20,6 +20,7 @@ spec:
      spec:
         containers:
         - image: nginx:1.17
+          name: frontend
           
 ---
 apiVersion: v1
