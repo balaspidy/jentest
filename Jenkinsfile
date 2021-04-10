@@ -7,7 +7,7 @@ environment {
     registry1 = "spidybala/nginx-prd"
     registry2 = "spidybala/nginx-dev"
     registryCredential = 'dockerhub'
-    dockerImage = ''
+    
   }
 agent any
 stages {
@@ -16,6 +16,7 @@ stage('Docker build for Prod') {
  when { branch "master" }
     steps {
       script {
+          dockerImage = ''
           dockerImage = docker.build registry1 + ":$BUILD_NUMBER"
          
       }
@@ -30,6 +31,7 @@ stage('Docker build for Dev') {
  }
     steps {
       script {
+          dockerImage = ''
           dockerImage = docker.build registry2 + ":$BUILD_NUMBER"
          
       }
