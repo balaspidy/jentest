@@ -20,6 +20,21 @@ stage('Apply Kubernetes files') {
     }
     }
   }
+ 
+  stage('Apply Kubernetes files') {
+  when { 
+         expression {
+            return env.BRANCH_NAME != 'master';
+        }
+  }
+    steps {
+    withKubeConfig([credentialsId: 'kubeid', serverUrl: 'https://10.128.0.7:6443']) {
+    sh 'curl -LO "https://storage.googleapis.com/kubernetes-release/release/v1.20.5/bin/linux/amd64/kubectl"'  
+    sh 'chmod u+x ./kubectl' 
+    sh 'cat frontend.yaml | sed "s/{{namespace}}/$namespace2/g" | `pwd`/kubectl apply -f -'
+    }
+    }
+  }
 
     }
     }
