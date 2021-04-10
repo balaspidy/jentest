@@ -7,7 +7,10 @@ environment {
   }
 agent any
 stages {
+
 stage('Apply Kubernetes files in Prod') {
+
+
   when { branch "master" }
     steps {
     git 'https://github.com/balaspidy/jentest.git'
