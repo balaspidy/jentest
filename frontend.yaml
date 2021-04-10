@@ -4,7 +4,7 @@ metadata:
   labels:
     run: httpd
   name: httpd
-  namespace: {{namespace1}}
+  namespace: {{namespace}}
 spec:
   containers:
   - image: httpd
