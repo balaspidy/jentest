@@ -7,8 +7,8 @@ environment {
     registry1 = "spidybala/nginx-prd"
     registry2 = "spidybala/nginx-dev"
     registryCredential = 'dockerhub'
-    image1 = "spidybala/nginx-prd" + ":$BUILD_NUMBER"
-    image2 = "spidybala/nginx-dev" + ":$BUILD_NUMBER"
+    image1 = "spidybala/nginx-prd" + "\:$BUILD_NUMBER"
+    image2 = "spidybala/nginx-dev" + "\:$BUILD_NUMBER"
   }
 agent any
 stages {
