@@ -75,7 +75,7 @@ stage('Apply Kubernetes files in Prod') {
     sh 'curl -LO "https://storage.googleapis.com/kubernetes-release/release/v1.20.5/bin/linux/amd64/kubectl"'  
     sh 'chmod u+x ./kubectl'
     sh 'image2= echo "spidybala\\/nginx-dev\\:$BUILD_NUMBER"'
-    sh 'cat frontend.yaml | sed "s/{{namespace}}/$namespace2/g"| sed "s/{{port}}/$port2/g" |sed "s/{{dockerimage}}/$image2/g"| `pwd`/kubectl apply -f -'
+    sh 'cat frontend.yaml | sed "s/{{namespace}}/$namespace2/g"| sed "s/{{port}}/$port1/g" |sed "s/{{dockerimage}}/$image2/g"| `pwd`/kubectl apply -f -'
     }
     }
   }
